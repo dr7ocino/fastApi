@@ -50,3 +50,9 @@ def createMovies(id:int=Body(), tittle:str=Body(), overview:str=Body(), year:int
             'category':category
     })
     return movies
+## put ## 
+@app.put('movies/{id}',tags=['movies'])
+def updateMovie(id:int, tittle:str=Body(), overview:str=Body(), year:int=Body(), rating:int=Body(), category:str=Body()):
+    movie=list(filter(lambda item:movies['id']==item, movies))
+    return movies
+        
